@@ -3,8 +3,8 @@ reqwest-vcr
 
 [![crates.io](https://img.shields.io/crates/v/reqwest-vcr.svg)](https://crates.io/crates/reqwest-vcr)
 
-Record-and-replay testing middleware for `reqwest` http client.
-This crate is a fork of https://github.com/ChorusOne/reqwest_vcr
+Record-and-replay testing middleware for `reqwest` http client.  
+This crate is a fork of https://github.com/ChorusOne/rvcr
 
 Inspired by:
   - [Ruby-VCR](https://github.com/vcr/vcr)
