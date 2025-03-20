@@ -3,7 +3,7 @@ use std::{path::PathBuf, time::Duration};
 
 use http::header::ACCEPT;
 use reqwest_middleware::{ClientBuilder, ClientWithMiddleware};
-use rvcr::VCRMiddleware;
+use reqwest_vcr::VCRMiddleware;
 
 async fn send_and_compare(
     method: reqwest::Method,
@@ -144,7 +144,7 @@ async fn test_rvcr_failed_debug() {
     logs_assert(|lines: &[&str]| {
         let processed_logs = lines
             .iter()
-            .map(|line| line.split("rvcr: ").collect::<Vec<&str>>()[1])
+            .map(|line| line.split("reqwest_vcr: ").collect::<Vec<&str>>()[1])
             .collect::<Vec<&str>>()
             .join("\n");
         assert!(processed_logs.contains(expected_logs));
@@ -160,7 +160,7 @@ async fn test_rvcr_replay_search_all() {
 
     let middleware = VCRMiddleware::try_from(bundle.clone())
         .unwrap()
-        .with_search(rvcr::VCRReplaySearch::SearchAll);
+        .with_search(reqwest_vcr::VCRReplaySearch::SearchAll);
 
     let vcr_client: ClientWithMiddleware = ClientBuilder::new(reqwest::Client::new())
         .with(middleware)
@@ -235,7 +235,7 @@ async fn test_rvcr_replay_skip_found() {
 
     let middleware = VCRMiddleware::try_from(bundle.clone())
         .unwrap()
-        .with_search(rvcr::VCRReplaySearch::SkipFound);
+        .with_search(reqwest_vcr::VCRReplaySearch::SkipFound);
 
     let vcr_client: ClientWithMiddleware = ClientBuilder::new(reqwest::Client::new())
         .with(middleware)

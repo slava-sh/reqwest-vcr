@@ -4,8 +4,8 @@ use std::path::PathBuf;
 
 use reqwest_middleware::ClientBuilder;
 use reqwest_middleware::ClientWithMiddleware;
-use rvcr::VCRMiddleware;
-use rvcr::VCRMode;
+use reqwest_vcr::VCRMiddleware;
+use reqwest_vcr::VCRMode;
 use vcr_cassette::{Request, Response};
 
 // Replace access_token and secret header values with dummy ones

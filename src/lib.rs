@@ -10,7 +10,7 @@
 //!         use std::path::PathBuf;
 //!         use reqwest::Client;
 //!         use reqwest_middleware::{ClientBuilder, ClientWithMiddleware};
-//!         use rvcr::{VCRMiddleware, VCRMode};
+//!         use reqwest_vcr::{VCRMiddleware, VCRMode};
 //!
 //!         let mut bundle = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
 //!         bundle.push("tests/resources/replay.vcr.json");

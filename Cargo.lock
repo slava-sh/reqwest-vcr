@@ -1210,6 +1210,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "reqwest-vcr"
+version = "0.2.1"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "base64 0.21.7",
+ "bytes",
+ "chrono",
+ "http",
+ "lazy_static",
+ "reqwest",
+ "reqwest-middleware",
+ "serde",
+ "serde_json",
+ "task-local-extensions",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
+ "tracing-test",
+ "url",
+ "vcr-cassette",
+ "zip",
+]
+
+[[package]]
 name = "ring"
 version = "0.17.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1286,31 +1311,6 @@ name = "rustversion"
 version = "1.0.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eded382c5f5f786b989652c49544c4877d9f015cc22e145a5ea8ea66c2921cd2"
-
-[[package]]
-name = "rvcr"
-version = "0.2.1"
-dependencies = [
- "anyhow",
- "async-trait",
- "base64 0.21.7",
- "bytes",
- "chrono",
- "http",
- "lazy_static",
- "reqwest",
- "reqwest-middleware",
- "serde",
- "serde_json",
- "task-local-extensions",
- "tokio",
- "tracing",
- "tracing-subscriber",
- "tracing-test",
- "url",
- "vcr-cassette",
- "zip",
-]
 
 [[package]]
 name = "ryu"
