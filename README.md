@@ -1,9 +1,10 @@
-rvcr
+reqwest-vcr
 ====
 
-[![crates.io](https://img.shields.io/crates/v/rvcr.svg)](https://crates.io/crates/rvcr)
+[![crates.io](https://img.shields.io/crates/v/reqwest-vcr.svg)](https://crates.io/crates/reqwest-vcr)
 
 Record-and-replay testing middleware for `reqwest` http client.
+This crate is a fork of https://github.com/ChorusOne/reqwest_vcr
 
 Inspired by:
   - [Ruby-VCR](https://github.com/vcr/vcr)
@@ -22,7 +23,7 @@ To record HTTP requests, initialize client like following
   use std::path::PathBuf;
   use reqwest::Client;
   use reqwest_middleware::{ClientBuilder, ClientWithMiddleware};
-  use rvcr::{VCRMiddleware, VCRMode};
+  use reqwest_vcr::{VCRMiddleware, VCRMode};
 
   let mut bundle = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
   bundle.push("tests/resources/replay.vcr.json");
@@ -44,7 +45,7 @@ with `.with_mode(VCRMode::Replay)`, or omit it, since replay is used by default.
 
 ## Search mode
 
-When replaying, rVCR can skip requests already found when searching for
+When replaying, reqwest_vcr can skip requests already found when searching for
 subsequent requests (the default). To disable skipping requests,
 which is useful, for example, if requests are done in parallel and responses
 may come in random order, use `.with_search(VCRReplaySearch::SearchAll)`.
